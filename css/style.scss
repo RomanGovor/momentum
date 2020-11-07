@@ -1,0 +1,278 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  max-height: 100vh;
+  background-size: cover;
+  color: white;
+  background: black;
+}
+
+h1 {
+  margin-bottom: 3rem;
+}
+
+h2 {
+  margin-bottom: 0.5rem;
+  opacity: 0.8;
+}
+
+// Weather ******************************************/
+.weather {
+  width: 200px;
+  height: 170px;
+  margin: 0 auto;
+  z-index: 3;
+  margin-top: 7vh;
+  border-radius: 9px;
+  border: 10px solid rgba(255,255,255,0.0);
+  background-color: rgba(0,0,0,0.2);
+  transition: 1s;
+
+  .owf {
+    font-size: 3rem;
+  }
+}
+
+// Info ********************************************/
+.info {
+  z-index: 3;
+  margin-bottom: 20vh;
+  margin-top: 3vh;
+  transition: 1s;
+  height: 40vh;
+
+  .time {
+    font-size: 8rem;
+    margin-bottom: -1rem;
+  }
+
+  .date__content {
+    margin-bottom: 2rem;
+  }
+
+  .info-greeting {
+    display: inline-flex;
+    margin-bottom: 1rem;
+  }
+}
+
+// Arrows *****************************************/
+.arrows {
+  z-index: 3;
+  display: flex;
+  transition: 1s;
+
+  justify-content: space-between;
+  position: relative;
+  letter-spacing: 3em;
+
+  .arrow {
+    width: 70px;
+    height: 70px;
+    margin-top: 0.5rem;
+  }
+
+  .arrow-left {
+    margin-right: 2rem;
+    cursor: pointer;
+  }
+
+  .arrow-right {
+    margin-left: 2rem;
+    cursor: pointer;
+  }
+
+  .arrows__item {
+    border-radius: 4rem;
+    width: 90px;
+    transition: 2s;
+  }
+
+  .arrows__item:hover {
+    background-color: white;
+    opacity: 0.5;
+  }
+
+  .current-img {
+    letter-spacing: 0;
+    font-size: 4rem;
+    background: rgba(255,255,255,0.3);
+  }
+
+  .current-img:hover {
+    background: rgba(255,255,255,0.5);
+  }
+}
+
+// Quote ****************************************/
+.quote {
+  z-index: 3;
+  margin-top: -9rem;
+  transition: 1s;
+  height: 50vh;
+
+  .quote__content {
+    margin: 0;
+    background: none;
+    padding: 1em;
+    border-radius: 1em;
+
+    figcaption, blockquote {
+      margin: 1em;
+      color: white;
+      font-size: 1.2rem;
+    }
+
+    figcaption {
+      text-align: right;
+      color: white;
+    }
+  }
+
+  .btn {
+    width: 120px;
+    height: 60px;
+    border: 0;
+    border-radius: 10px;
+    font-family: 'Quicksand', sans-serif;
+    opacity: 0.6;
+    background-size: contain;
+    background-repeat: no-repeat;
+    filter: grayscale(.8);
+    margin: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: 2s;
+    cursor: pointer;
+    margin-bottom: -2rem;
+  }
+
+  .btn:hover {
+    filter: grayscale(.2);
+    background: rgba(251,160,60,0.6);
+  }
+
+  .btn:active,
+  .btn:focus {
+    outline: 0;
+  }
+
+  .btn:active{
+    transform: scale(1.02)
+  }
+}
+
+.animated {
+  background-repeat: no-repeat;
+  background-position: left top;
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fadeInRight {
+  -webkit-animation-name: fadeInRight;
+  animation-name: fadeInRight;
+}
+
+
+.for_bg{
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+
+.overlay {
+  background-color: rgba(0,0,0,0.2);
+  z-index: 2;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+
+@media screen and (max-width: 700px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  .info {
+    .time {
+      font-size: 6rem;
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .info {
+    .time {
+      font-size: 4.5rem;
+    }
+  }
+
+  .arrows {
+    letter-spacing: 2.5em;
+
+    .arrow {
+      width: 50px;
+      height: 50px;
+    }
+
+    .arrow-left {
+      margin-right: 1.5rem;
+    }
+
+    .arrow-right {
+      margin-left: 1.5rem;
+    }
+
+    .current-img {
+      font-size: 3rem;
+    }
+
+    .arrows__item {
+      border-radius: 50%;
+      width: 70px;
+    }
+  }
+}
